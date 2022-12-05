@@ -5,7 +5,7 @@ from os import listdir
 from PIL import Image
 
 # get the path or directory
-found_faces_dir = "foundFaces"
+found_faces_dir = "../foundFaces"
 
 
 #group the faces

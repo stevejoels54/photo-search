@@ -4,8 +4,8 @@ from os import listdir
 from PIL import Image
 
 # get the path or directory
-folderDir = "dataset"
-foundFacesDir = "foundFaces"
+folderDir = "../dataset"
+foundFacesDir = "../foundFaces"
 
 
 def getFaces(folderDir):
