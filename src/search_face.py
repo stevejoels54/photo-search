@@ -4,52 +4,58 @@ import face_recognition
 import os
 from os import listdir
 from PIL import Image
+from helpers.count_files import countFiles
 
 # get the path or directory
-#searchable_faces = "dataset"
+folder_dir = "../groupedFaces"
 
-searchable_faces = "foundFaces"
+countFiles(folder_dir)
 
-face = "face22"
-# face_file_path = os.path.join("searchable", face24.jpeg)
+# # get the path or directory
+# #searchable_faces = "dataset"
 
-# face_path = os.path(os.listdir("searchable"), "face46.jpeg")
+# searchable_faces = "foundFaces"
 
-# get unknown file encoding
+# face = "face22"
+# # face_file_path = os.path.join("searchable", face24.jpeg)
 
-print("Processing pictures.......")
+# # face_path = os.path(os.listdir("searchable"), "face46.jpeg")
 
-reference_picture = cv2.imread(
-    "/Users/ssekyewajoelsteven/Documents/PROJECTS/G-and-B-projects/photo-search/foundFaces/face32.jpeg"
-)
-reference_picture = cv2.cvtColor(reference_picture, cv2.COLOR_BGR2RGB)
-try:
-    reference_picture_encoding = face_recognition.face_encodings(
-        reference_picture)[0]
-except:
-    print("Image %s has a blurry face" % face)
+# # get unknown file encoding
 
-# get the list of files in the directory
+# print("Processing pictures.......")
 
-files = listdir(searchable_faces)
-for file in files:  # loop through the files in the directory
-    if file.endswith(".jpg") or file.endswith(".png") or file.endswith(
-            ".jpeg"):
-        file_path = os.path.join(searchable_faces, file)
+# reference_picture = cv2.imread(
+#     "/Users/ssekyewajoelsteven/Documents/PROJECTS/G-and-B-projects/photo-search/foundFaces/face32.jpeg"
+# )
+# reference_picture = cv2.cvtColor(reference_picture, cv2.COLOR_BGR2RGB)
+# try:
+#     reference_picture_encoding = face_recognition.face_encodings(
+#         reference_picture)[0]
+# except:
+#     print("Image %s has a blurry face" % face)
 
-        # read and encode file
+# # get the list of files in the directory
 
-        image = cv2.imread(file_path)
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        try:
-            file_encoding = face_recognition.face_encodings(image)[0]
+# files = listdir(searchable_faces)
+# for file in files:  # loop through the files in the directory
+#     if file.endswith(".jpg") or file.endswith(".png") or file.endswith(
+#             ".jpeg"):
+#         file_path = os.path.join(searchable_faces, file)
 
-            # compare the face encodings
+#         # read and encode file
 
-            results = face_recognition.compare_faces(
-                [file_encoding], reference_picture_encoding, tolerance=0.4)
-            if results[0]:
-                print("Matched: %s" % file)
-        except:
-            pass
-print("Done processing")
+#         image = cv2.imread(file_path)
+#         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+#         try:
+#             file_encoding = face_recognition.face_encodings(image)[0]
+
+#             # compare the face encodings
+
+#             results = face_recognition.compare_faces(
+#                 [file_encoding], reference_picture_encoding, tolerance=0.4)
+#             if results[0]:
+#                 print("Matched: %s" % file)
+#         except:
+#             pass
+# print("Done processing")
