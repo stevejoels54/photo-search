@@ -5,8 +5,8 @@ from os import listdir
 from PIL import Image
 
 # paths and directories
-foundFacesDir = "foundFaces"
-groupedFacesDir = "groupedFaces"
+foundFacesDir = "../foundFaces"
+groupedFacesDir = "../groupedFaces"
 
 
 #group the faces
@@ -49,14 +49,15 @@ def groupFaces(folder_dir):
                                 if not os.path.exists(groupedFacesDir):
                                     os.makedirs(groupedFacesDir)
                                 # create a folder for the filtered faces named client inside the filteredFaces directory
-                                if not os.path.exists("groupedFaces/client " +
-                                                      str(clientNum)):
-                                    os.makedirs("groupedFaces/client " +
+                                if not os.path.exists(
+                                        "../groupedFaces/client " +
+                                        str(clientNum)):
+                                    os.makedirs("../groupedFaces/client " +
                                                 str(clientNum))
                                 # save the filtered faces in the client folder
                                 filteredFace = Image.open(file_path1)
                                 # move the matched face to the filteredFaces directory and rename it to face1, face2, face3 etc
-                                filteredFace.save("groupedFaces/client " +
+                                filteredFace.save("../groupedFaces/client " +
                                                   str(clientNum) + "/face" +
                                                   str(faceNum) + ".jpeg")
                                 faceNum += 1
