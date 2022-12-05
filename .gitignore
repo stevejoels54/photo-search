@@ -1,0 +1,11 @@
+.vscode/
+.venv/
+
+# groupFaces folder
+groupedFaces/
+
+# foundFaces folder
+foundFaces/
+
+# sortedPics folder
+sortedPics/
