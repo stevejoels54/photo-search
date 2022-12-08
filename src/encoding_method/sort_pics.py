@@ -17,8 +17,8 @@ with open(pickle_file, 'rb') as f:
 
 # iterate through all the pickle files in the folder
 for file in os.listdir(path):
-    print(file)
     if file.endswith('.pickle'):
+        print("Sorting: ", file.split(".")[0])
         # Load the face encodings from the pickle file
         with open(path + file, 'rb') as f:
             client_encodings = pickle.load(f)
@@ -31,7 +31,7 @@ for file in os.listdir(path):
                         match = face_recognition.compare_faces(
                             [client_encoding],
                             face_encoding_in_image,
-                            tolerance=0.4)
+                            tolerance=0.3)
                         # print the match
                         if match[0]:
                             image_names.add(img_name)
