@@ -31,7 +31,7 @@ for file in os.listdir(path):
                         match = face_recognition.compare_faces(
                             [client_encoding],
                             face_encoding_in_image,
-                            tolerance=0.3)
+                            tolerance=0.25)
                         # print the match
                         if match[0]:
                             image_names.add(img_name)
@@ -44,7 +44,7 @@ for file in os.listdir(path):
 
         for image_name in image_names:
             os.system(
-                f'cp ../../dataset/dataset1/{image_name} ../../sorted/{file.split(".")[0]}/{image_name}'
+                f'cp ../../dataset/dataset2/{image_name.split(".")[0]+".jpg"} ../../sorted/{file.split(".")[0]}/{image_name.split(".")[0]+".jpg"}'
             )
         # Clear the image names set
         image_names.clear()

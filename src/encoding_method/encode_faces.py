@@ -38,4 +38,4 @@ def process_images(dataset_dir):
 
 
 # Process the images in the dataset/dataset1 folder
-process_images('../../dataset/dataset1/')
+process_images('../../dataset/dataset2_no_bg/')
