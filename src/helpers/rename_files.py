@@ -4,14 +4,14 @@ import os
 import shutil
 
 # folder path
-dir_path = "pics"
+dir_path = "../../dataset/dataset8"
 
 
 def renamePics(dir_path, name):
     count = 1
     for file in os.listdir(dir_path):
         if file.endswith(".jpg") or file.endswith(".png") or file.endswith(
-                ".jpeg"):
+                ".jpeg") or file.endswith(".JPG") or file.endswith(".PNG"):
             src = dir_path + "/" + file
             dst = dir_path + "/" + name + str(count) + ".jpg"
             os.rename(src, dst)
@@ -25,3 +25,6 @@ def renameFolders(dir_path, name):
         dst = dir_path + "/" + name + str(count)
         os.rename(src, dst)
         count += 1
+
+
+renamePics(dir_path, "pic")
